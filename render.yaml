@@ -4,7 +4,8 @@ services:
     env: docker
     plan: free
     region: singapore
-    dockerfilePath: ./Dockerfile
+    image:
+      url: docker.io/n8nio/n8n:latest
     envVars:
       - key: DB_TYPE
         value: postgresdb
