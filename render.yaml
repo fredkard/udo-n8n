@@ -1,9 +1,9 @@
 services:
   - type: web
     name: n8n-service
-    plan: free
-    region: oregon
     env: docker
+    plan: free
+    region: singapore
     image:
       url: docker.io/n8nio/n8n:latest
     envVars:
@@ -18,7 +18,7 @@ services:
       - key: DB_POSTGRESDB_USER
         value: postgres
       - key: DB_POSTGRESDB_PASSWORD
-        sync: false  # set this manually in Render dashboard
+        value: Mousehunt123
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
@@ -26,10 +26,12 @@ services:
       - key: N8N_BASIC_AUTH_PASSWORD
         value: changeme123
       - key: N8N_HOST
-        value: n8n-service-cpaa.onrender.com
+        value: n8n-service.onrender.com
       - key: N8N_PORT
         value: "5678"
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
+      - key: WEBHOOK_URL
+        value: https://n8n-service.onrender.com/
