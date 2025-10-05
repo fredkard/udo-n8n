@@ -1,10 +1,11 @@
 services:
   - type: web
     name: n8n-service
+    env: docker
     plan: free
-    region: frankfurt   # or oregon
-    image:
-      url: docker.io/n8nio/n8n:latest
+    region: oregon
+    docker:
+      image: docker.io/n8nio/n8n:latest
     envVars:
       - key: DB_TYPE
         value: postgresdb
@@ -17,7 +18,7 @@ services:
       - key: DB_POSTGRESDB_USER
         value: postgres
       - key: DB_POSTGRESDB_PASSWORD
-        sync: false   # use Render's dashboard to set this securely
+        sync: false  # set this manually in Render dashboard
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
