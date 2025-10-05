@@ -4,8 +4,9 @@ services:
     env: docker
     plan: free
     region: oregon
-    docker:
-      image: docker.io/n8nio/n8n:latest
+    env: docker
+    image:
+      url: docker.io/n8nio/n8n:latest
     envVars:
       - key: DB_TYPE
         value: postgresdb
